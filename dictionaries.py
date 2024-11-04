@@ -17,8 +17,6 @@
 #     'pazymiai': [7, 8, 9, 6, 8, 5, 4]
 # }
 # print(f'vardas:{studentas['vardas']} studijoja {studentas['kur_mokosi']['mokykla']}')
-from calendar import prcal
-from getpass import fallback_getpass
 
 # # print('##############################################################################################################')
 # # 2. Sukurkite dictionary informacijai apie filmą saugoti. Į šį dictionary sudėkite
@@ -325,11 +323,11 @@ from getpass import fallback_getpass
 # for key, value in min_quantity_products.items():
 #     print (f'\t{key}: {value} vnt')
 
-# # print('##############################################################################################################')
-# # 10.Susikurkite dictionary darbuotojo informacijai saugoti. Nurodykite tokias
-# # savybes: vardas ir pavardė, telefonas, profesija, etatas, atlyginimas. Taip
-# # pat, sukurkite dar vieną darbuotojo dictionary, tačiau nenurodykite 1-os
-# # ar 2-ų savybių, pvz, praleiskite profesiją.
+# # # print('##############################################################################################################')
+# # # 10.Susikurkite dictionary darbuotojo informacijai saugoti. Nurodykite tokias
+# # # savybes: vardas ir pavardė, telefonas, profesija, etatas, atlyginimas. Taip
+# # # pat, sukurkite dar vieną darbuotojo dictionary, tačiau nenurodykite 1-os
+# # # ar 2-ų savybių, pvz, praleiskite profesiją.
 # employee1 = {
 #     "first_name": "Jonas",
 #     "last_name": "Jonaitis",
@@ -356,18 +354,20 @@ from getpass import fallback_getpass
 #     print("No, employee1 and employee2 are not same")
 #     not_exist = []
 #     for key1 in employee1.keys():
-#         print(key1, end='')
-#         found = False
-#         for key2 in employee2.keys():
-#             if key2 == key1:
-#                 found = True
-#                 break
-#         if found:
-#             print('\tFound')
-#         else:
-#             print('\tNot Exist')
+#     #     print(key1, end='')
+#     #     found = False
+#     #     for key2 in employee2.keys():
+#     #         if key2 == key1:
+#     #             found = True
+#     #             break
+#     #     if found:
+#     #         print('\tFound')
+#     #     else:
+#     #         print('\tNot Exist')
+#     #         not_exist.append(key1)
+#         #paprastesnis variantas
+#         if key1 not in employee2.keys():
 #             not_exist.append(key1)
-#
 # # Padarykite taip, kad vartotojas turėtų galimybę suvesti trūkstamas savybes.
 # print ('***'*20)
 # if len(not_exist)>0:
@@ -375,14 +375,16 @@ from getpass import fallback_getpass
 #     for name in not_exist:
 #         print(name, end=" ")
 #     print()
-#     addAnswer = input('Ar noretumete jos sukurti (t/n)?: ').lower()
-#     if addAnswer == 't':
-#         for name in not_exist:
-#             employee2[name] = input(f'savibes {name} reiksme:')
+#     # addAnswer = input('Ar noretumete jos sukurti (t/n)?: ').lower()
+#     # if addAnswer == 't':
+#     #     for name in not_exist:
+#     #         employee2[name] = input(f'savibes {name} reiksme:')
 # print(employee2)
-
-
-# # # print('##############################################################################################################')
+# #kitas budas
+# print('##############################################################################################################')
+# print(set(employee1.keys())-set(employee2.keys()))
+#
+# print('##############################################################################################################')
 # # 11.Kaimynystėje yra trys kepyklos, apie kiekvieną yra žinoma ši informacija:
 # # pavadinimas; darbuotojų kiekis; adresas; praeitos savaitės iškeptų kepinių
 # # kiekiai (sąrašas su 7-iais elementais, kur nurodyti atskiri kepinių kiekiai).
@@ -436,52 +438,186 @@ from getpass import fallback_getpass
 #
 # print(f'Shios savaites pilningiaus yra kepikla: {max_week_sales_name}')
 # print(f'Shios savaites maziausias pagamintas vidurkis yra kepikloje: {min_prod_avg_name}')
-12.Susikurkite sąrašą, kuriame būtų saugomos skirtingos knygos (kaip
-dictionary elementai). Apie kiekvieną knygą į atskirus knygų dictionary
-sudėkite norimą informaciją (bent 3 savybes). Į list įdėkite bent 3 knygas.
-Visas šias knygas išsiveskite. Tuomet parodykite pirmą knygą. Antros
-knygos kažkurią savybę.
-# print('##############################################################################################################')
-13.Susikurkite sąrašą, kuriame būtų keletas prekių (kaip dictionary
-elementai) ir jį užpildykite pasirinktais duomenimis. Išveskite visų prekių
-pavadinimus su kainomis ir dar kokiais nors atributais atskirose eilutėse.
-# print('##############################################################################################################')
-14.Susikurkite sąrašą, kuriame būtų saugoma informacija apie keletą
-automobilių (kaip dictionary elementai) ir užpildykite jį pasirinktais
-duomenimis. Išveskite kiekvieno automobilio pavadinimą, metus ir
-paskaičiuotą jo amžių (dabartiniai metai - gamybos metai).
-# print('##############################################################################################################')
-15.Susikurkite sąrašą, kuriame būtų saugoma keleto įmonių duomenys (kaip
-dictionary elementai) ir jį užpildykite duomenimis. Išveskite kiekvienos
-įmonės informaciją atskirose eilutėse, gražiai suformatuotai (sakinio
-pavidalu ar pan.). Taip pat, ką nors paskaičiuokite iš turimų skaitinių
-duomenų (pvz.: vidutinis įmonės amžius, darbuotojų kiekis per visas
-įmones, bendras pelnas, ar pan.).
-# print('##############################################################################################################')
-16.Susikurkite sąrašą, kuriame būtų saugoma informacija apie skirtingas
-ligonines (kaip dictionary elementai) ir užpildykite jį pasirinktais
-duomenimis. Išveskite ligoninių pavadinimus su adresais skirtingose
-eilutėse. Suskaičiuokite ką nors iš skaitinių jų duomenų, pvz.: bendrą
-lankytojų kiekį, bendrą ar vidutinį darbuotojų kiekį, ar pan.
-# print('##############################################################################################################')
-17.Susikurkite sąrašą, kuriame būtų saugoma informacija apie keletą
-studentų (kaip dictionary elementai), kur apie kiekvieną studentą būtų
-žinoma ši informacija: vardas ir pavardė, amžius, pažymiai, studijų
-programa, kursas. Kiekvieną studentą išveskite taip: pirmoje eilutėje visi
-studento duomenys išskyrus jo pažymius, antroje eilutėje jo pažymiai,
-trečioje jo pažymių vidurkis su prierašu 'pažymių vidurkis'. Išvedus visus
-studentus dėkite brūkšnį (pvz.: -----) ir išveskite bendrą visų studentų
-pažymių vidurkį.
-# print('##############################################################################################################')
-18.Susikurkite parduotuvės dictionary, kuriame būtų ši informacija:
-pavadinimas, adresas, darbuotojų kiekis, prekių sąrašas (kiekviena kaip
-dictionary elementas). Apie kiekvieną prekę parduotuvėje žinoma ši
-informacija: pavadinimas; kodas; kaina; savikaina; turimas kiekis. Išveskite
-parduotuvės bendrą informaciją, tuomet užrašą "prekės" ir atskirose
-eilutėse turimas prekes su kuria nors jų informacija (pvz.: pavadinimai,
-kainos ir turimi kiekiai). Galiausiai paskaičiuokite kiek iš viso parduotuvė
-turi visų prekių (sudėkite jų kiekius). Raskite ir išveskite kurios prekės
-turima daugiausiai, o kurios mažiausiai.
-# print('##############################################################################################################')
-19.Sukurkite norimą sąrašą iš dictionary elementų su norimais duomenimis.
-Atlikite išvedimus ir pasirinktus skaičiavimus.
+# # print('##############################################################################################################')
+# 12.Susikurkite sąrašą, kuriame būtų saugomos skirtingos knygos (kaip
+# dictionary elementai). Apie kiekvieną knygą į atskirus knygų dictionary
+# sudėkite norimą informaciją (bent 3 savybes). Į list įdėkite bent 3 knygas.
+# Visas šias knygas išsiveskite. Tuomet parodykite pirmą knygą. Antros
+# knygos kažkurią savybę.
+# books = [
+#     {
+#         "title": "The Silent American",
+#         "author": "Graham Greene",
+#         "publisher": "Alma Littera",
+#         "year": 2010,
+#         "genre": "Novel"
+#     },
+#     {
+#         "title": "1984",
+#         "author": "George Orwell",
+#         "publisher": "Baltos lankos",
+#         "year": 2008,
+#         "genre": "Dystopian fiction"
+#     },
+#     {
+#         "title": "The Little Prince",
+#         "author": "Antoine de Saint-Exupéry",
+#         "publisher": "Nieko rimto",
+#         "year": 2015,
+#         "genre": "Philosophical fable"
+#     }
+# ]
+# for book in books:
+#     print(book)
+#     print('---' * 70)
+#
+# for key, value in books[0].items():
+#     print (f'\t{key}: {value} vnt')
+# print('---' * 70)
+# print(f'{books[2]['author']} parashe knyga "{books[2]['title']}" {books[2]['year']} metais')
+
+# # print('##############################################################################################################')
+# 13.Susikurkite sąrašą, kuriame būtų keletas prekių (kaip dictionary
+# elementai) ir jį užpildykite pasirinktais duomenimis. Išveskite visų prekių
+# pavadinimus su kainomis ir dar kokiais nors atributais atskirose eilutėse.
+# products = [{
+#     "name": "Smartphone",
+#     "price": 399.99,
+#     "cost": 250.00,
+#     "code": "TEL123",
+#     "quantity_in_stock": 100,
+#     },
+#             {
+#     "name": "Headphones",
+#     "price": 59.99,
+#     "cost": 30.00,
+#     "code": "AUS456",
+#     "quantity_in_stock": 50,
+#     },
+#             {
+#     "name": "Laptop",
+#     "price": 1299.99,
+#     "cost": 800.00,
+#     "code": "KOM789",
+#     "quantity_in_stock": 20,
+#     }
+# ]
+# for product in products:
+#     print(product)
+#     print(f'prekes pavadinimas:{product['name']}\t kaina: {product['price']}\t kiekis: {product['quantity_in_stock']}')
+#     print('---' * 70)
+# # print('##############################################################################################################')
+# 14.Susikurkite sąrašą, kuriame būtų saugoma informacija apie keletą
+# automobilių (kaip dictionary elementai) ir užpildykite jį pasirinktais
+# duomenimis. Išveskite kiekvieno automobilio pavadinimą, metus ir
+# paskaičiuotą jo amžių (dabartiniai metai - gamybos metai).
+# # print('##############################################################################################################')
+# 15.Susikurkite sąrašą, kuriame būtų saugoma keleto įmonių duomenys (kaip
+# dictionary elementai) ir jį užpildykite duomenimis. Išveskite kiekvienos
+# įmonės informaciją atskirose eilutėse, gražiai suformatuotai (sakinio
+# pavidalu ar pan.). Taip pat, ką nors paskaičiuokite iš turimų skaitinių
+# duomenų (pvz.: vidutinis įmonės amžius, darbuotojų kiekis per visas
+# įmones, bendras pelnas, ar pan.).
+# # print('##############################################################################################################')
+# 16.Susikurkite sąrašą, kuriame būtų saugoma informacija apie skirtingas
+# ligonines (kaip dictionary elementai) ir užpildykite jį pasirinktais
+# duomenimis. Išveskite ligoninių pavadinimus su adresais skirtingose
+# eilutėse. Suskaičiuokite ką nors iš skaitinių jų duomenų, pvz.: bendrą
+# lankytojų kiekį, bendrą ar vidutinį darbuotojų kiekį, ar pan.
+# # print('##############################################################################################################')
+# 17.Susikurkite sąrašą, kuriame būtų saugoma informacija apie keletą
+# studentų (kaip dictionary elementai), kur apie kiekvieną studentą būtų
+# žinoma ši informacija: vardas ir pavardė, amžius, pažymiai, studijų
+# programa, kursas. Kiekvieną studentą išveskite taip: pirmoje eilutėje visi
+# studento duomenys išskyrus jo pažymius, antroje eilutėje jo pažymiai,
+# trečioje jo pažymių vidurkis su prierašu 'pažymių vidurkis'. Išvedus visus
+# studentus dėkite brūkšnį (pvz.: -----) ir išveskite bendrą visų studentų
+# pažymių vidurkį.
+# # # print('##############################################################################################################')
+# # 18.Susikurkite parduotuvės dictionary, kuriame būtų ši informacija:
+# # pavadinimas, adresas, darbuotojų kiekis, prekių sąrašas (kiekviena kaip
+# # dictionary elementas). Apie kiekvieną prekę parduotuvėje žinoma ši
+# # informacija: pavadinimas; kodas; kaina; savikaina; turimas kiekis.
+# store = {
+#     "name": "Mano Parduotuvė",
+#     "address": "Vilniaus g. 12",
+#     "employees": 10,
+#     "products": [
+#         {
+#             "name": "Apple",
+#             "code": "FRU001",
+#             "price": 1.5,
+#             "cost": 0.8,
+#             "quantity": 100
+#         },
+#         {
+#             "name": "Banana",
+#             "code": "FRU002",
+#             "price": 0.9,
+#             "cost": 0.5,
+#             "quantity": 200
+#         },
+#         {
+#             "name": "Milk",
+#             "code": "DRI001",
+#             "price": 1.2,
+#             "cost": 0.7,
+#             "quantity": 50
+#         }
+#     ]
+# }
+# # Išveskite parduotuvės bendrą informaciją, tuomet užrašą "prekės" ir atskirose
+# # eilutėse turimas prekes su kuria nors jų informacija (pvz.: pavadinimai,
+# # kainos ir turimi kiekiai). Galiausiai paskaičiuokite kiek iš viso parduotuvė
+# # turi visų prekių (sudėkite jų kiekius). Raskite ir išveskite kurios prekės
+# # turima daugiausiai, o kurios mažiausiai.
+# print ('PArduotuves pavadinimas: ', store['name'])
+# print ('Adresas: ',store['address'])
+# print ('Prekiu kiekis: ', len(store["products"]))
+# print ('Prekes: ')
+# all_products_count = 0
+# min_quantity = store['products'][0]['quantity']
+# min_quantity_product_name = store['products'][0]['name']
+# print(min_quantity)
+# for product in store['products']:
+#     print(f'\t{product['name']}\t kaina: {product['price']}\t kiekis: {product['quantity']}')
+#     all_products_count += product['quantity']
+#     if product['quantity'] < min_quantity:
+#         min_quantity = product['quantity']
+#         min_quantity_product_name = product['name']
+# # print('##############################################################################################################')
+# 19.Sukurkite norimą sąrašą iš dictionary elementų su norimais duomenimis.
+# Atlikite išvedimus ir pasirinktus skaičiavimus.
+
+# # print('##############################################################################################################')
+# 20.Susikurkite vieną ar kelis objektus ir išmėginkite visus prieš tai pamatytus dict metodus (clear, copy, update, fromkeys, pop, ...)
+employee1 = {
+    "first_name": "Jonas",
+    "last_name": "Jonaitis",
+    "phone_number": "+37061234567",
+    "profession": "Programuotojas",
+    "position": "Vyresnysis",
+    "salary": 2500,
+    "test": "aaa"
+}
+employee2 = {
+    "first_name": "Petras",
+    "last_name": "Petraitis",
+    "phone_number": "+37069876543",
+    "position": "Projektų vadovas",
+    "salary": 3000,
+    "test3" : "test3"
+
+}
+employee3 = employee2.copy()
+emp4 = employee2.copy()
+print(emp4)
+print(employee1)
+print(employee2)
+print(employee3)
+print ('X'*120)
+employee2 = employee1.copy()
+employee3.update(employee1)
+print(employee1)
+print(employee2)
+print(employee3)
